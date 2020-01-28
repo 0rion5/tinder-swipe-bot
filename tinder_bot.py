@@ -1,10 +1,13 @@
 from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 from time import sleep
 
 from secrets import username, password
 
 class TinderBot():
     def __init__(self):
+        options = Options()
+        options.add_experimental_option("excludeSwitches", ['enable-automation'])
         self.driver = webdriver.Chrome()
 
     def login(self):
